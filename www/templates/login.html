@@ -1,0 +1,27 @@
+<ion-view>
+	<ion-content class="login">
+		<form name="loginForm" novalidate ng-submit="login(loginForm)">
+			<div class="list list-inset">
+				<label class="item item-input">
+					<input type="text" name="username" placeholder="请输入手机号" ng-model="credential.username" required ng-pattern="/^1[3|4|5|7|8]\d{9}$/" ng-focus />
+				</label>
+				<div ng-messages="loginForm.username.$error" ng-show="loginForm.username.$dirty && !loginForm.username.$focused && loginForm.username.$invalid" class="error">
+    				<p ng-message="required">用户名不能为空</p>
+    				<p ng-message="pattern">请输入一个有效的手机号码</p>
+    			</div>
+				<label class="item item-input">
+					<input type="password" name="password" placeholder="请输入密码" ng-model="credential.password" required ng-minlength="6" ng-focus />
+				</label>
+				<div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$dirty && !loginForm.password.$focused && loginForm.username.$invalid" class="error">
+    				<p ng-message="required">密码不能为空</p>
+    				<p ng-message="minlength">密码至少6位</p>
+    			</div>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-calm" ng-disabled="loginForm.$invalid">
+					<i class="ion ion-unlocked"></i> 登 录
+				</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

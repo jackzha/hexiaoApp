@@ -1,0 +1,32 @@
+<ion-view cache-view="false">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h4 class="title">统计</h4>
+	</ion-header-bar>
+	<ion-content class="count">
+		<ion-list>
+			<ion-item ng-show="isWinAdmin == 'true'">
+				<p>
+					<span>公众号</span>
+					<span>品类</span>
+					<span>商户</span>
+					<span>已发</span>
+					<span>已抢</span>
+					<span>已核销</span>
+				</p>
+			</ion-item>
+			<ion-item ng-repeat="item in cards" ng-show="isWinAdmin == 'true'">
+				<p>
+					<span>{{item.site_name}}</span>
+					<span>{{item.hall_name}}</span>
+					<span>{{item.name}}</span>
+					<span>{{item.send_num}}</span>
+					<span>{{item.code_num}}</span>
+					<span>{{item.inspector_num}}</span>
+				</p>
+			</ion-item>
+			<ion-item ng-show="message != ''">
+				<p class="message">{{message}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view cache-view="false">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h4 class="title">扫一扫</h4>
+	    <button class="button" ng-click="scan()">
+            <i class="ion ion-android-expand"></i>
+        </button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="scan" ng-click="scan()">
+			<i class="ion ion-android-expand"></i>
+			<p>扫一扫</p>
+		</div>
+		<div class="row switch">
+  			<div class="col col-50">当前登录用户</div>
+  			<div class="col col-50" ng-click="switchUser()">切换用户</div>
+		</div>
+	</ion-content>
+</ion-view>

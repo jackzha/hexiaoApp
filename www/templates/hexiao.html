@@ -1,0 +1,20 @@
+<ion-view cache-view="false">
+    <ion-header-bar align-title="center" class="bar-calm">
+    	<button class="button" ng-click="goBack()">
+            <i class="ion ion-chevron-left"></i> 返回
+        </button>
+        <h4 class="title">核销</h4>
+	</ion-header-bar>
+	<ion-content>
+		<div class="hexiao">
+			<p class="detail">优惠券详细信息:</p>
+			<p class="corp" ng-show="card.card_corp != null && card.card_corp != ''">{{card.card_corp}}赞助</p>
+			<p class="batch">{{card.site_name}}：{{card.card_id}} # {{card.batch_id}} # {{card.id}}</p>
+			<p class="name">{{card.card_name}}</p>
+			<p class="card-range" ng-show="card.card_range == 'all'">全校通用</p>
+			<p class="card-range" ng-show="card.card_range == 'win'">限 {{card.card_hall}}{{card.card_win}} 使用</p>
+			<p class="during">使用时间：{{start}} -- {{end}}</p>
+			<p class="confirm"><button class="button button-assertive" ng-click="hexiao()">核 销</button></p>
+		</div>
+	</ion-content>
+</ion-view>
